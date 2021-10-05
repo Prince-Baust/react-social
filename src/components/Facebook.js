@@ -9,11 +9,26 @@ const Facebook = () => {
   const [picture, setPicture] = useState('');
 
   const componentClicked = () => console.log('Clicked!');
-  const responseFacebook = (res) => console.log(res);
+  const responseFacebook = (res) => {
+    setIsLoggedIn(true);
+    setUserID(res.id);
+    setName(res.name);
+    setEmail(res.email);
+    setPicture(res.picture.data.url);
+  }
 
 let fbContent;
 if (isLoggedIn) {
-  fbContent = null;
+  fbContent = (
+    <div style={{width: '400px',
+    margin: 'auto',
+    background: '#f4f4f',
+    paddibg: '20px'}}>
+      <img src={picture} alt={name}/>
+      <h2>Welcome {name}</h2>
+      <p>Email: {email}</p>
+    </div>
+  );
 } else {
   fbContent = (
     <FacebookLogin
