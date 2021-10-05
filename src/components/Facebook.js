@@ -3,6 +3,7 @@ import {useState} from "react";
 
 const Facebook = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // eslint-disable-next-line no-unused-vars
   const [userID, setUserID] = useState("");
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -23,7 +24,7 @@ if (isLoggedIn) {
     <div style={{width: '400px',
     margin: 'auto',
     background: '#f4f4f',
-    paddibg: '20px'}}>
+    padding: '20px'}}>
       <img src={picture} alt={name}/>
       <h2>Welcome {name}</h2>
       <p>Email: {email}</p>
