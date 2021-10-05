@@ -8,8 +8,22 @@ const Facebook = () => {
   const [email, setEmail] = useState("");
   const [picture, setPicture] = useState('');
 
+  const componentClicked = () => console.log('Clicked!');
+  const responseFacebook = (res) => console.log(res);
 
-  return
+let fbContent;
+if (isLoggedIn) {
+  fbContent = null;
+} else {
+  fbContent = (
+    <FacebookLogin
+    appId="257879462784452"
+    autoLoad={true}
+    fields="name,email,picture"
+    onClick={componentClicked}
+    callback={responseFacebook} />);
+}
+  return fbContent;
 }
 
 export default Facebook;
