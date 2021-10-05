@@ -17,7 +17,7 @@ if (isLoggedIn) {
 } else {
   fbContent = (
     <FacebookLogin
-    appId="257879462784452"
+    appId="215663660498963"
     autoLoad={true}
     fields="name,email,picture"
     onClick={componentClicked}
